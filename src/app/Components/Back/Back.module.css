@@ -1,0 +1,44 @@
+.back {
+  font-family: "Base", monospace;
+  font-size: 2vw;
+  margin-left: 2vw;
+  padding: 0.5vw;
+  border: 0.3vw solid #4486ff;
+  border-bottom-right-radius: 0.5vw;
+  border-top-right-radius: 0.5vw;
+  border-bottom-left-radius: 5vw;
+  border-top-left-radius: 5vw;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  color: black;
+}
+
+.back:hover {
+  background-color: #4486ff;
+}
+
+.back.dark {
+  border: 0.3vw solid rgba(57, 49, 96, 1);
+  color: white;
+  background-color: rgb(14, 14, 14);
+}
+
+.back.dark:hover {
+  background-color: rgba(57, 49, 96, 1);
+}
+
+@media (max-width: 450px) {
+  .back {
+    font-size: 4vw;
+    margin: 2vw;
+    padding: 2vw;
+    border: 1vw solid #4486ff;
+    border-bottom-right-radius: 1vw;
+    border-top-right-radius: 1vw;
+    border-bottom-left-radius: 5vw;
+    border-top-left-radius: 5vw;
+  }
+  .back.dark {
+    border: 1vw solid rgba(57, 49, 96, 1);
+  }
+}

@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+@font-face {
+  font-family: Base;
+  src: url(/JetBrainsMono.ttf);
+}
+
+.body {
+  background-color: white;
+}
+
+.body.dark {
+  background-color: rgb(17, 17, 17);
+}
+
+a {
+  text-decoration: none;
+  color:black;
+}

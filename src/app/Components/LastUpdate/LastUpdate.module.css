@@ -1,0 +1,188 @@
+
+/* Основной контейнер */
+.lastUpdate {
+  background: #4486ff;
+  color: white;
+  padding: 1vw 2vw;
+  border-radius: 0.5vw;
+  margin: 15px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-family: 'Base', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.lastUpdate.dark {
+  background: rgba(57, 49, 96, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.errorContent {
+  font-size: 1vw;
+}
+
+/* Контейнер с информацией об обновлении */
+.updateInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 1.5vw;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.mainText {
+  font-size: 1vw;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.relativeTime {
+  font-size: 0.8vw;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* Детали файла */
+.fileDetails {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85rem;
+}
+
+.detailLabel {
+  opacity: 0.8;
+}
+
+.detailValue {
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Кнопки */
+.refreshButton,
+.retryButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: auto;
+  font-size: 0.9rem;
+}
+
+.refreshButton:hover,
+.retryButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(45deg);
+}
+
+/* Состояния */
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #f56565 0%, #c53030 100%);
+}
+
+.errorIcon {
+  font-size: 1vw;
+}
+
+.notFound {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+}
+
+.notFoundIcon {
+  font-size: 1.2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 450px) {
+  .lastUpdate {
+    padding: 4vw 5vw;
+    border-radius: 2vw;
+  }
+  .icon {
+    font-size: 9vw;
+  }
+  .fileDetails {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .refreshButton {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+  
+  .mainText {
+    font-size: 4.5vw;
+  }
+  
+  .relativeTime {
+    font-size: 4vw;
+  }
+  .lastUpdate {
+    font-size: 4vw;
+  }
+
+  .errorContent {
+  font-size: 4vw;
+}
+
+
+
+}
+

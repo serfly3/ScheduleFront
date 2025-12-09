@@ -1,0 +1,283 @@
+/* Общие стили для выпадающего списка */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  height: 7vh; /* Начальная высота только для кнопки */
+  overflow: visible;
+}
+
+/* Кнопка для выпадающего списка */
+.dropdown-btn {
+  color: rgb(0, 0, 0);
+  padding: 1vw 1vw 1vw 1vw;
+  border: none;
+  cursor: pointer;
+  font-family: "Base", monospace;
+  font-size: 2vw;
+  font-weight: 800;
+  line-height: 4vh;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 23vw;
+  height: 7vh;
+  border-top-left-radius: 2vw;
+  border-top-right-radius: 2vw;
+  border: 0.3vw solid #4486ff;
+  z-index: 3;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Стиль кнопки когда dropdown открыт */
+.dropdown-btn.open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Стиль для стрелки */
+.arrow {
+  margin-left: 1vw;
+  transition: transform 0.3s ease;
+}
+
+/* Стиль для стрелки при открытом списке */
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Обертка для анимации расширения */
+.dropdown-content-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 23vw;
+  border-bottom-right-radius: 2vw;
+  border-bottom-left-radius: 2vw;
+  overflow: hidden;
+  z-index: 2;
+  max-height: 0;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ДОБАВЛЕНО: класс для открытого состояния */
+.dropdown-content-wrapper.expanded {
+  max-height: 20vh;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Темная тема для обертки */
+
+/* Контейнер для выпадающего контента */
+.dropdown-content {
+  padding: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease 0.1s;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+/* Стиль для выпадающего контента при открытии */
+.dropdown-content.show {
+  opacity: 1;
+  transform: translateY(0);
+  border-bottom-left-radius: 2vw;
+  border-bottom-right-radius: 2vw;
+  padding: 0 0 1vw 0;
+}
+
+.dropdown-content.show.dark {
+  background-color: #161616;
+}
+
+/* Стили для ссылок в выпадающем списке */
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease-in-out;
+  padding: 1.2vw 2vw;
+  font-size: 1.5vw;
+  font-family: "Base", monospace;
+  font-weight: 800;
+  background: transparent;
+  transform: translateY(10px);
+  opacity: 0;
+  animation: slideInItem 0.3s ease forwards;
+}
+
+.dropdown-content.show a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-content.show a:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.dropdown-content.show a:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* Анимация появления элементов */
+@keyframes slideInItem {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Темная тема */
+.dropdown-btn.dark {
+  border: 0.3vw solid rgba(57, 49, 96, 1);
+  color: white;
+  background-color: #161616;
+}
+
+.dropdown-content.dark a {
+  color: rgb(172, 172, 172);
+}
+
+.dropdown-content a {
+  color: rgb(78, 78, 78);
+}
+
+.dropdown-content.dark a:hover {
+  background-color: rgb(71, 62, 117);
+  color: white;
+  border-radius: 1vw;
+}
+
+.dropdown-content a:hover {
+  background-color: #e3f2fd;
+  color: rgba(42, 42, 42, 1);
+  border-radius: 1vw;
+}
+
+/* Стили для изображений в стрелке */
+.img {
+  width: 2vw;
+  height: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s ease;
+}
+
+/* Горизонтальная линия для разделителя */
+.hr {
+  height: 0;
+  border: none;
+  border-top: 0.05vw solid #333;
+  width: 90%;
+  margin: 0.5vh auto;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.3s ease 0.15s;
+}
+
+.dropdown-content.show .hr {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.hr.dark {
+  border-top: 0.05vw solid #ffffff;
+}
+
+/* Анимация расширения основного контейнера */
+.dropdown-container.expanded {
+  height: auto;
+  min-height: 7vh;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Мобильная версия */
+@media (max-width: 450px) {
+  .dropdown-container {
+    height: 7.5vh;
+  }
+
+  .dropdown-container.expanded {
+    height: auto;
+    min-height: 7.5vh;
+  }
+
+  .dropdown-btn {
+    width: 85vw;
+    height: 7.5vh;
+    font-size: 7vw;
+    border-top-left-radius: 9vw;
+    border-top-right-radius: 9vw;
+    padding: 7vw 8vw;
+    line-height: 4vh;
+    border: 1vw solid #4486ff;
+  }
+
+  .dropdown-btn.dark {
+    border: 1vw solid rgba(57, 49, 96, 1);
+  }
+
+  .dropdown-btn.open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .dropdown-content-wrapper {
+    width: 85vw;
+    border-bottom-right-radius: 9vw;
+    border-bottom-left-radius: 9vw;
+  }
+
+  /* ДОБАВЛЕНО: класс для открытого состояния на мобильных */
+  .dropdown-content-wrapper.expanded {
+    max-height: 25vh;
+  }
+
+  .dropdown-content a {
+    font-size: 6vw;
+    padding: 4vw 8vw;
+  }
+
+  .img {
+    width: 7vw;
+  }
+
+  .hr {
+    border-top: 0.5vw solid #333;
+    margin: 1vh auto;
+  }
+
+  .hr.dark {
+    border-top: 0.5vw solid #ffffff;
+  }
+
+  .dropdown-content.show {
+    border-bottom-left-radius: 9vw;
+    border-bottom-right-radius: 9vw;
+  }
+}
+
+/* Плавная анимация для всего контейнера */
+.dropdown-container {
+  animation: smoothAppear 1s ease-out;
+}
+
+@keyframes smoothAppear {
+  from {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

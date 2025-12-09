@@ -1,0 +1,10 @@
+.container {
+  display: flex; /* Включаем Flexbox */
+  flex-direction: row; /* Элементы идут в строку (по умолчанию, но для ясности можно указать явно) */
+  align-items: flex-start; /* Выравнивание по вертикали по центру */
+  justify-content: center; /* Выравнивание элементов по левому краю */
+  gap: 20px; /* Добавляем промежутки между элементами */
+  padding: 1vw 3vw 0.5vw 1vw;
+  height: 100%;
+}
+

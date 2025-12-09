@@ -1,0 +1,115 @@
+.element {
+  font-family: "Base", monospace;
+  font-size: 2.2vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  width: 7vw;
+  padding: 0.4vw 0.6vw;
+  font-weight: 1000;
+  transition: 0.2s ease-in-out;
+  border: 0.3vw solid #4486ff;
+}
+
+.element.dark {
+  border: 0.3vw solid rgba(57, 49, 96, 1);
+  color: white;
+  cursor: pointer;
+}
+
+.ull {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+
+.element:hover {
+  /* transform: translateY(-3px); */
+  cursor: pointer;
+  background-color: #4486ff;
+  color: white;
+}
+
+.element.dark:hover {
+  /* transform: translateY(-3px); */
+  cursor: pointer;
+  background-color: rgba(57, 49, 96, 1);
+  color: white;
+}
+
+.elementn {
+  font-family: "Base", monospace;
+  font-size: 1.5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5vw;
+  cursor: default;
+  width: 45vw;
+  padding: 0.4vw 0.6vw;
+  font-weight: 1000;
+  transition: 0.2s ease-in-out;
+  color: rgb(0, 0, 0);
+}
+
+.elementn.dark {
+  color: white;
+  cursor: default;
+}
+
+@media (max-width: 450px) {
+  .element {
+    font-family: "Base", monospace;
+    font-size: 6.5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vw;
+    cursor: pointer;
+    width: 20vw;
+    padding: 2vw 3vw;
+    font-weight: 1000;
+    transition: 0.2s ease-in-out;
+    border: 1vw solid #4486ff;
+
+  }
+
+  .element.dark {
+  border: 1vw solid rgba(57, 49, 96, 1);
+  color: white;
+  cursor: pointer;
+}
+
+
+  .elementn {
+    font-family: "Base", monospace;
+    font-size: 7vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6vw;
+    cursor: pointer;
+    width: 90vw;
+    padding: 2vw 3vw;
+    font-weight: 1000;
+    transition: 0.2s ease-in-out;
+    margin: 2vw 0 2vw 1vw;
+  }
+
+  .ull {
+    flex-wrap: wrap;
+    gap: 2.6vw;
+    padding: 3vw 0 3vw 1vw;
+  }
+
+  .element:hover {
+    transform: scale(1);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1vw;
+  margin-left: 4vw;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Добавлена анимация */
+}
+
+.container.shifted {
+  transform: translateY(20vh); /* Сдвиг при открытии списка */
+}
+
+@media (max-width: 450px) {
+  .container {
+    gap: 4vw;
+    padding-bottom: 10vw;
+    margin-left: 0;
+    width: 90vw;
+  }
+
+  .container.shifted {
+    transform: translateY(5vh);
+  }
+    .elementn{
+    font-family: "Base", monospace;
+    font-size: vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6vw;
+    cursor: pointer;
+    width: 90vw;
+    padding: 2vw 3vw;
+    font-weight: 1000;
+    transition: 0.2s ease-in-out;
+    margin: 2vw 0 2vw 1vw;
+  }
+
+  .elementn p {
+    font-size: 8vw;
+    padding-left: 12vw;
+  }
+
+}
+
+/* Для ПК - отключаем сдвиг */
+@media (min-width: 451px) {
+  .container.shifted {
+    transform: translateY(0);
+  }
+}
+
+.elementn {
+  font-family: "Base", monospace;
+  font-size: 1.5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5vw;
+  cursor: default;
+  width: 45vw;
+  padding: 0.4vw 0.6vw;
+  font-weight: 1000;
+  transition: 0.2s ease-in-out;
+  color: rgb(0, 0, 0);
+}
+
+.elementn.dark {
+  color: white;
+  cursor: default;
+}

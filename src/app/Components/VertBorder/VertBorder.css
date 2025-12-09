@@ -1,0 +1,36 @@
+.vertborder {
+  width: 0.1vw;
+  background-color: rgb(0, 0, 0);
+  transition: transform 0.7s ;
+  align-self: stretch; /* Растягивается по высоте контейнера */
+}
+
+.vertborder.shifted {
+  transform: translateY(20vh);
+}
+
+/* Темная тема */
+.vertborder.dark {
+  background-color: rgb(255, 255, 255);
+}
+
+/* Мобильная версия */
+@media (max-width: 450px) {
+  .vertborder {
+    width: 100vw;
+    height: 0.2vh;
+    margin: 2vh 0;
+    align-self: center; /* Центрируем на мобильных */
+  }
+  
+  .vertborder.shifted {
+    transform: translateY(1vh);
+  }
+}
+
+/* Для ПК - отключаем сдвиг */
+@media (min-width: 451px) {
+  .vertborder.shifted {
+    transform: translateY(0);
+  }
+}
